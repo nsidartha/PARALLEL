@@ -3,10 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Visual Experimentation</title>
+    <title>PARALLEL</title>
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Lobster|Open+Sans+Condensed:300&display=swap"
         rel="stylesheet">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <!-- Style Sheet -->
     <link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
@@ -14,7 +18,7 @@
 <body>
     <div class="gridContainer">
         <!-- HEADER -->
-        <div class="topBar">Parallel
+        <div class="topBar" src="assets/Images/cloud-of-horizontal-lines-weather-symbol.png">Parallel
         </div>
 
         <!-- MAIN DISPLAY -->
@@ -25,25 +29,46 @@
             <h2 class="author"></h2>
         </div>
 
-        <!-- SONGS LSIT -->
-        <div id="songList">
-            < <button class="collapsible">Songs</button>
-                <div class="content"><span class="song" data-name="POP/STARS" data-src="assets/songs/kda.mp3"
-                        data-author="By KD/A">KDA</span>
-                    <span class="song" data-name="Bad Guy" data-src="assets/songs/badguy.mp3"
-                        data-author="By Billie Eilish">Bad
-                        Guy</span>
-                    <span class="song" data-name="Press" data-src="assets/songs/cardiPress.mp3"
-                        data-author="By Cardi B">Press</span>
+        <nav>
+            <!-- navbar content here  -->
+        </nav>
+
+        <ul id="slide-out" class="sidenav">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="images/office.jpg">
+                    </div>
+                    <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+                    <a href="#name"><span class="white-text name">John Doe</span></a>
+                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
                 </div>
-        </div>
+            </li>
+            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+            <li><a href="#!">Second Link</a></li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a class="subheader">Subheader</a></li>
+            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        </ul>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
         <!-- FOOTER -->
         <div class="bottomBar">
 
             <!-- VISUALIZER OPTIONS AND AUDIO -->
-            <span id="buttonContainer"></span>
+            <span class="button-container" id="buttonContainer"></span>
             <audio audio.crossOrigin="anonymous" id="audio" src="assets/Songs/bensound-summer.mp3" controls></audio>
+            <div class="button-container">
+                <span class="song" data-name="POP/STARS" data-src="assets/songs/kda.mp3"
+                    data-author="By KD/A">KDA</span>
+                <span class="song" data-name="Bad Guy" data-src="assets/songs/badguy.mp3"
+                    data-author="By Billie Eilish">Bad
+                    Guy</span>
+                <span class="song" data-name="Press" data-src="assets/songs/cardiPress.mp3"
+                    data-author="By Cardi B">Press</span>
+            </div>
         </div>
     </div>
 
@@ -52,7 +77,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/app.js"></script>
     <script src="assets/visualizer.js"></script>
-
+    <!-- JavaScript/Materialize-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 
 </html>
