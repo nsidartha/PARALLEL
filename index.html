@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Visual Experimentation</title>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Lobster|Open+Sans+Condensed:300&display=swap"
+        rel="stylesheet">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+</head>
+
+<body>
+    <div class="gridContainer">
+        <!-- HEADER -->
+        <div class="topBar">Parallel
+        </div>
+
+        <!-- MAIN DISPLAY -->
+        <div id="visualizerContainer" style="background: black">
+        </div>
+        <div class="music">
+            <h1 class="title">Choose A Song</h1>
+            <h2 class="author"></h2>
+        </div>
+
+        <!-- SONGS LSIT -->
+        <div id="songList">
+            < <button class="collapsible">Songs</button>
+                <div class="content"><span class="song" data-name="POP/STARS" data-src="assets/songs/kda.mp3"
+                        data-author="By KD/A">KDA</span>
+                    <span class="song" data-name="Bad Guy" data-src="assets/songs/badguy.mp3"
+                        data-author="By Billie Eilish">Bad
+                        Guy</span>
+                    <span class="song" data-name="Press" data-src="assets/songs/cardiPress.mp3"
+                        data-author="By Cardi B">Press</span>
+                </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="bottomBar">
+
+            <!-- VISUALIZER OPTIONS AND AUDIO -->
+            <span id="buttonContainer"></span>
+            <audio audio.crossOrigin="anonymous" id="audio" src="assets/Songs/bensound-summer.mp3" controls></audio>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/app.js"></script>
+    <script src="assets/visualizer.js"></script>
+
+</body>
+
+</html>
