@@ -12,6 +12,7 @@ body {
     /* font-family: 'Lobster', cursive; */
     font-family: 'Open Sans Condensed', sans-serif;
     /* font-family: 'Amatic SC', cursive; */
+    height: 100%;
 }
 
 .gridContainer {
@@ -68,17 +69,15 @@ audio {
     display: table;
 }
 
-.button-container{
+.button-container {
     margin: 0 auto;
     display: table;
 }
 
 #bar:hover,
 #circle:hover,
-#round:hover ,
-.song:hover{
+#round:hover,
+.song:hover {
     color: white;
     cursor: pointer;
 }
-
-

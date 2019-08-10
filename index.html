@@ -29,56 +29,53 @@
             <h2 class="author"></h2>
         </div>
 
-        <nav>
-            <!-- navbar content here  -->
-        </nav>
-
-        <ul id="slide-out" class="sidenav">
-            <li>
-                <div class="user-view">
-                    <div class="background">
-                        <img src="images/office.jpg">
-                    </div>
-                    <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-                    <a href="#name"><span class="white-text name">John Doe</span></a>
-                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-                </div>
-            </li>
-            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-            <li><a href="#!">Second Link</a></li>
-            <li>
-                <div class="divider"></div>
-            </li>
-            <li><a class="subheader">Subheader</a></li>
-            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-        </ul>
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-
-        <!-- FOOTER -->
-        <div class="bottomBar">
-
-            <!-- VISUALIZER OPTIONS AND AUDIO -->
-            <span class="button-container" id="buttonContainer"></span>
-            <audio audio.crossOrigin="anonymous" id="audio" src="assets/Songs/bensound-summer.mp3" controls></audio>
-            <div class="button-container">
-                <span class="song" data-name="POP/STARS" data-src="assets/songs/kda.mp3"
+        <!-- SONGS LSIT -->
+        <div id="songList">
+            <button class="collapsible">Songs</button>
+            <div class="content"><span class="song" data-name="POP/STARS" data-src="assets/songs/kda.ogg"
                     data-author="By KD/A">KDA</span>
-                <span class="song" data-name="Bad Guy" data-src="assets/songs/badguy.mp3"
+                <span class="song" data-name="Bad Guy" data-src="assets/songs/badguy.ogg"
                     data-author="By Billie Eilish">Bad
                     Guy</span>
-                <span class="song" data-name="Press" data-src="assets/songs/cardiPress.mp3"
+                <span class="song" data-name="Press" data-src="assets/songs/cardiPress.ogg"
                     data-author="By Cardi B">Press</span>
             </div>
-        </div>
-    </div>
+            <ul>
+                <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+                <li><a href="#!">Second Link</a></li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+                <li><a class="subheader">Subheader</a></li>
+                <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+            </ul>
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
-    <!-- jQuery -->
-    <script src="https://sdk.scdn.co/spotify-player.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/app.js"></script>
-    <script src="assets/visualizer.js"></script>
-    <!-- JavaScript/Materialize-->
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+            <!-- FOOTER -->
+            <div class="bottomBar">
+
+                <!-- VISUALIZER OPTIONS AND AUDIO -->
+                <span class="button-container" id="buttonContainer"></span>
+                <audio audio.crossOrigin="anonymous" id="audio" src="assets/Songs/bensound-summer.mp3" controls></audio>
+                <div class="button-container">
+                    <span class="song" data-name="POP/STARS" data-src="assets/songs/kda.mp3"
+                        data-author="By KD/A">KDA</span>
+                    <span class="song" data-name="Bad Guy" data-src="assets/songs/badguy.mp3"
+                        data-author="By Billie Eilish">Bad
+                        Guy</span>
+                    <span class="song" data-name="Press" data-src="assets/songs/cardiPress.mp3"
+                        data-author="By Cardi B">Press</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery -->
+        <!-- <script src="https://sdk.scdn.co/spotify-player.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="assets/app.js"></script>
+        <script src="assets/visualizer.js"></script>
+        <!-- JavaScript/Materialize-->
+        <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 
 </html>
