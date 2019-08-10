@@ -5,6 +5,7 @@ body {
     /* font-family: 'Lobster', cursive; */
     font-family: 'Open Sans Condensed', sans-serif;
     /* font-family: 'Amatic SC', cursive; */
+    height: 100%;
 }
 
 .gridContainer {
@@ -98,4 +99,9 @@ audio {
     display: none;
     overflow: hidden;
     background-color: #f1f1f1;
+}
+
+#songList{
+    position: absolute;
+    top: 50%;
 }

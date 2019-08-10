@@ -23,12 +23,14 @@
      var height = canvas.height;
      var width = canvas.width;
      console.log("Width: " + canvas.width + " Height: " + canvas.height);
-     fillStyle = document.getElementById("visualizerContainer").style.background;
+    //  fillStyle = document.getElementById("visualizerContainer").style.background;
+    fillStyle = "black";
 
      // Audio Variables
      var audio = document.getElementById("audio");
      audio.crossOrigin = "anonymous";
      audio.load();
+     
      //  var audioContext = new AudioContext();
      var audioContext = new(window.AudioContext || window.webkitAudioContext)();
      var src = audioContext.createMediaElementSource(audio);
@@ -64,7 +66,7 @@
      // Create Bar Default
      clearCanvas();
      renderBarVisualizer();
-     audio.play();
+    //  audio.play();
 
      // Choose Bar Visualizer
      $("#bar").on("click", function () {
@@ -220,57 +222,57 @@
 
  });
 
- //  Spotify
- window.onSpotifyWebPlaybackSDKReady = () => {
-     const token = 'BQCxEhsMhNqlUI8vTv0LzBkcjq298B70Q9hdYTHZu3nrZEimR6FphK6tBouDw-bdlWpnMsod_Z78DbyguTlGpaIbv1nMjcyPWnJOBbaDpId3AFzr7cae87IdpQ-80_De7ted6rEF7avWdeo1BjDSUeDX-eF3aDFdcg';
-     const player = new Spotify.Player({
-         name: 'Web Playback SDK Quick Start Player',
-         getOAuthToken: cb => {
-             cb(token);
-         }
-     });
+//  //  Spotify
+//  window.onSpotifyWebPlaybackSDKReady = () => {
+//      const token = 'BQCxEhsMhNqlUI8vTv0LzBkcjq298B70Q9hdYTHZu3nrZEimR6FphK6tBouDw-bdlWpnMsod_Z78DbyguTlGpaIbv1nMjcyPWnJOBbaDpId3AFzr7cae87IdpQ-80_De7ted6rEF7avWdeo1BjDSUeDX-eF3aDFdcg';
+//      const player = new Spotify.Player({
+//          name: 'Web Playback SDK Quick Start Player',
+//          getOAuthToken: cb => {
+//              cb(token);
+//          }
+//      });
 
-     // Error handling
-     player.addListener('initialization_error', ({
-         message
-     }) => {
-         console.error(message);
-     });
-     player.addListener('authentication_error', ({
-         message
-     }) => {
-         console.error(message);
-     });
-     player.addListener('account_error', ({
-         message
-     }) => {
-         console.error(message);
-     });
-     player.addListener('playback_error', ({
-         message
-     }) => {
-         console.error(message);
-     });
+//      // Error handling
+//      player.addListener('initialization_error', ({
+//          message
+//      }) => {
+//          console.error(message);
+//      });
+//      player.addListener('authentication_error', ({
+//          message
+//      }) => {
+//          console.error(message);
+//      });
+//      player.addListener('account_error', ({
+//          message
+//      }) => {
+//          console.error(message);
+//      });
+//      player.addListener('playback_error', ({
+//          message
+//      }) => {
+//          console.error(message);
+//      });
 
-     // Playback status updates
-     player.addListener('player_state_changed', state => {
-         console.log(state);
-     });
+//      // Playback status updates
+//      player.addListener('player_state_changed', state => {
+//          console.log(state);
+//      });
 
-     // Ready
-     player.addListener('ready', ({
-         device_id
-     }) => {
-         console.log('Ready with Device ID', device_id);
-     });
+//      // Ready
+//      player.addListener('ready', ({
+//          device_id
+//      }) => {
+//          console.log('Ready with Device ID', device_id);
+//      });
 
-     // Not Ready
-     player.addListener('not_ready', ({
-         device_id
-     }) => {
-         console.log('Device ID has gone offline', device_id);
-     });
+//      // Not Ready
+//      player.addListener('not_ready', ({
+//          device_id
+//      }) => {
+//          console.log('Device ID has gone offline', device_id);
+//      });
 
-     // Connect to the player!
-     player.connect();
- };
+//      // Connect to the player!
+//      player.connect();
+//  };
