@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PARALLEL</title>
+    <!-- Font -->
+    <script src="https://kit.fontawesome.com/0dc9da7c51.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Lobster|Open+Sans+Condensed:300&display=swap"
+        rel="stylesheet">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+</head>
+
+<body>
+    <div class="gridContainer">
+        <!-- HEADER -->
+        <div class="topBar">Parallel
+        </div>
+
+        <!-- MAIN DISPLAY -->
+        <div id="visualizerContainer" style="background: black">
+        </div>
+        <div class="music">
+            <h1 class="title">Choose A Song</h1>
+            <h2 class="author"></h2>
+        </div>
+
+<!-- Twitter SideNav is here -->
+<nav> Live Twitter Feed</nav>
+<ul id="slide-out" class="sidenav">
+    <li>
+            <i class="fab fa-twitter-square"></i>
+            <a href="#name"><span class="blue-text name">Twitter Feed </span></a>
+        <div class="divider"></div>
+    </li>
+    <!-- <li><a class="waves-effect" href="#!">Third Link With Waves</a></li> -->
+</ul>
+<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+
+<!-- Lyrics SideNav is here -->
+<nav> Song Lyrics</nav>
+<ul id="slide-out-lyrics" class="sidenav" fixed>
+    <li>
+            <i class="fab fa-twitter-square"></i>
+            <a href="#name"><span class="blue-text name">Song Lyrics</span></a>
+        <div class="divider"></div>
+    </li>
+    <!-- <li><a class="waves-effect" href="#!">Third Link With Waves</a></li> -->
+</ul>
+<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+<!-- <a href="#" data-activates="slide-out" class="button-collaspe"><i class="mdi-navigation-menu">menu</i></a>
+<i class="fas fa-long-arrow-alt-right"></i> -->
+        
+
+        <!-- FOOTER -->
+        <div class="bottomBar">
+
+            <!-- VISUALIZER OPTIONS AND AUDIO -->
+            <span class="button-container" id="buttonContainer"></span>
+            <audio audio.crossorigin="anonymous" id="audio" src="assets/Songs/bensound-summer.mp3" controls></audio>
+            <div class="button-container">
+                <span class="song" data-name="POP/STARS" data-src="assets/songs/kda.mp3"
+                    data-author="By KD/A">KDA</span>
+                <span class="song" data-name="Bad Guy" data-src="assets/songs/badguy.mp3"
+                    data-author="By Billie Eilish">Bad
+                    Guy</span>
+                <span class="song" data-name="Press" data-src="assets/songs/cardiPress.mp3"
+                    data-author="By Cardi B">Press</span>
+            </div>
+        </div>
+    </div>
+        
+
+    
+   
+
+    <!-- jQuery -->
+    <!-- <script src="https://sdk.scdn.co/spotify-player.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- JavaScript/Materialize-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript">
+        $(".button-collapse").sideNav();
+    </script>
+    <script src="assets/visualizer.js"></script>
+    <script src="assets/app.js"></script>
+</body>
+
+</html>
