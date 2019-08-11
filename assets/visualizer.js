@@ -25,7 +25,6 @@
      console.log("Width: " + canvas.width + " Height: " + canvas.height);
      //  fillStyle = document.getElementById("visualizerContainer").style.background;
      fillStyle = "black";
-
      // Audio Variables
      var audio = document.getElementById("audio");
      audio.crossOrigin = "anonymous";
@@ -56,13 +55,13 @@
      renderBarVisualizer();
      //  audio.play();
 
-     if(typeof AudioContext != "undefined" || typeof webkitAudioContext != "undefined") {
-        var resumeAudio = function() {
-           if(typeof g_WebAudioContext == "undefined" || g_WebAudioContext == null) return;
-           if(g_WebAudioContext.state == "suspended") g_WebAudioContext.resume();
-           document.removeEventListener("click", resumeAudio);
-        };
-        document.addEventListener("click", resumeAudio);
+     if (typeof AudioContext != "undefined" || typeof webkitAudioContext != "undefined") {
+         var resumeAudio = function () {
+             if (typeof g_WebAudioContext == "undefined" || g_WebAudioContext == null) return;
+             if (g_WebAudioContext.state == "suspended") g_WebAudioContext.resume();
+             document.removeEventListener("click", resumeAudio);
+         };
+         document.addEventListener("click", resumeAudio);
      }
 
      //  Song Changer
