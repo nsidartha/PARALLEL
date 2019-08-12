@@ -2,14 +2,9 @@
 
      // Button Variables
      var buttonContainer = $("<div>");
-     //  buttonContainer.css("text-align", "center");
-     //  buttonContainer.css("border", ".1rem solid red");
-     //  buttonContainer.css("border-radius", "5px");
-     //  buttonContainer.css("margin", "0 auto");
-     //  buttonContainer.css("display", "table");
-     var bar = $("<span>").attr("id", "bar").text(" BAR ");
-     var circle = $("<span>").attr("id", "circle").text(" CIRCLE ");
-     var round = $("<span>").attr("id", "round").text(" SPEAKER ");
+     var bar = $("<div>").attr("id", "bar").text(" BAR ");
+     var circle = $("<div>").attr("id", "circle").text(" CIRCLE ");
+     var round = $("<div>").attr("id", "round").text(" SPEAKER ");
      buttonContainer.append(bar, circle, round);
      $("#buttonContainer").append(buttonContainer);
 
@@ -74,40 +69,39 @@
          $("#audio").attr("src", audio.src);
          audio.play();
          console.log("song clicked: " + title + " " + author);
-         twitter($(this).attr("data-twitter"));
-     });
 
-     //Twitter Function
-     function twitter(data) {
-         //  console.log("twitter updating");
-         //  var twitter = $(this).attr("data-twitter");
-         //  console.log(twitter);
-         //  $(".twitter-timeline").attr("href", twitter);
-         //  requestAnimationFrame(twitter);
-         $("#twitterIdDiv").empty();
-         // $(".twitter-timeline").html("<a class='twitter-timeline' id='twitterId' href="+data+"></a>'');
-         var a = $("<a>");
-         a.attr("class", "twitter-timeline");
-         a.attr("id", "twitterId");
-         a.attr("href", data);
-         $("#twitterIdDiv").append(a);
-         console.log("twitter " + a.attr("class"));
-     }
+         if (title == "Bad Guy") {
+            $("#twitterId1").css("display", "none");
+            $("#twitterId2").css("display", "block");
+            $("#twitterId3").css("display", "none");
+          } else if (title == "Press") {
+            $("#twitterId1").css("display", "block");
+            $("#twitterId2").css("display", "none");
+            $("#twitterId3").css("display", "none");
+          } else if (title == "POP/STARS") {
+            $("#twitterId1").css("display", "none");
+            $("#twitterId2").css("display", "none");
+            $("#twitterId3").css("display", "block");
+          }
+     });
 
      // Choose Bar Visualizer
      $("#bar").on("click", function () {
          clearCanvas();
          renderBarVisualizer();
+         console.log("Bar Visualizer Activated");
      });
 
      $("#circle").on("click", function () {
          clearCanvas();
          renderCircleVisualizer();
+         console.log("Circle Visualizer Activated");
      });
 
      $("#round").on("click", function () {
          clearCanvas();
          renderRoundVisualizer();
+         console.log("Round Visualizer Activated");
      });
 
      //Bar Visualizer
@@ -135,7 +129,7 @@
              x += barWidth + 1;
              x2 -= barWidth + 1;
          }
-         console.log("Bar Visualizer Animating");
+         //  console.log("Bar Visualizer Animating");
 
      }
 
@@ -225,7 +219,7 @@
              barHeight = freqArray[i];
              radius = freqArray[i];
 
-             b = barHeight + (25 * (i / analyzer.frequencyBinCount));
+             b = barHeight + (25 * (i / analyzer.frequencyBinCount)+50);
              g = 250 * (i / analyzer.frequencyBinCount);
 
              canvasContext.strokeStyle = "rgb(" + r + "," + g + "," + b + ")";
