@@ -112,8 +112,7 @@
              var data = response.replace("callback(", "").replace(");", "");
              data = JSON.parse(data);
              console.log(data);
-             //change the console.log to print into HTML'
-             console.log(data.message.body.lyrics.lyrics_body);
+             //change the console.log to print into HTML
              $("#lyricsDiv").text(data.message.body.lyrics.lyrics_body);
          });
 
