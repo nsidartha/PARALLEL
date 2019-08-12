@@ -72,3 +72,13 @@ $("#bandButton").on("click", function () {
   }
   console.log("Band Toggle");
 });
+
+// Title Form
+$('.titleInput').keypress(function(event) {
+    if (event.keyCode == 13 || event.which == 13) {
+        var input = $("#event").val();
+        $(".eventTitle").text(input);
+        $("#event").val('');
+        event.preventDefault();
+    }
+});

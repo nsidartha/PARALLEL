@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Lobster|Open+Sans+Condensed:300&display=swap"
         rel="stylesheet">
     <!--Import Google Icon Font-->
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Style Sheet -->
@@ -24,11 +24,24 @@
         <!-- HEADER -->
         <div class="topBar">
             <span id="heading">Parallel</span>
+            <form class="titleInput">
+                <div class="input-field">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="event" type="text" class="validate">
+                    <label for="event">Event Title</label>
+                    <!-- <span id="submit">Submit</span> -->
+                </div>
+            </form>
+
         </div>
 
         <!-- MAIN DISPLAY -->
         <div id="visualizerContainer" style="background: black">
         </div>
+        <!-- Event Title -->
+        <div class="eventTitle"></div>
+
+        <!-- Music Info Display -->
         <div class="music">
             <h1 class="title">Choose A Song</h1>
             <h2 class="author"></h2>

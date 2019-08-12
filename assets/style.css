@@ -196,6 +196,34 @@ audio {
     font-size: 200%;
 }
 
+.input-field{
+    float: right;
+    position: fixed;
+    right: 1%;
+    color: white;
+    top:0%;
+    height: 5rem;
+}
+
+input{
+    color:white;
+}
+
+.eventTitle{
+    grid-area: main;
+    justify-self: center;
+    z-index: 2;
+    color: White;
+    text-align: center;
+    margin-top: 10vh;
+    font-size: 500%;
+    font-weight: bold; 
+}
+
+/* #submit{
+    float: right;
+} */
+
 /* 
 
 @media only screen and (max-width : 992px) {
