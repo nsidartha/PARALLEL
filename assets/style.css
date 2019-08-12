@@ -37,12 +37,12 @@ body {
 
 
 .music {
-    position: absolute;
-    top: 36%;
+    grid-area: main;
     justify-self: center;
     z-index: 2;
     color: White;
     text-align: center;
+    margin-top: 26vh;
 }
 
 .topBar {
