@@ -1,15 +1,15 @@
-html {
+/* html {
     overflow: hidden;
     height: 100vh;
-}
+} */
 
 header, main, footer {
     padding-left: 240px;
   }
 
 body {
-    overflow: hidden;
-    height: 100vh;
+    /* overflow: hidden;
+    height: 100vh; */
     background: #0c0032;
     color: #282828;
     text-shadow: 2px 2px 8px black;

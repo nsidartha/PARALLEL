@@ -74,7 +74,25 @@
          $("#audio").attr("src", audio.src);
          audio.play();
          console.log("song clicked: " + title + " " + author);
+         twitter($(this).attr("data-twitter"));
      });
+
+     //Twitter Function
+     function twitter(data) {
+         //  console.log("twitter updating");
+         //  var twitter = $(this).attr("data-twitter");
+         //  console.log(twitter);
+         //  $(".twitter-timeline").attr("href", twitter);
+         //  requestAnimationFrame(twitter);
+         $("#twitterIdDiv").empty();
+         // $(".twitter-timeline").html("<a class='twitter-timeline' id='twitterId' href="+data+"></a>'');
+         var a = $("<a>");
+         a.attr("class", "twitter-timeline");
+         a.attr("id", "twitterId");
+         a.attr("href", data);
+         $("#twitterIdDiv").append(a);
+         console.log("twitter " + a.attr("class"));
+     }
 
      // Choose Bar Visualizer
      $("#bar").on("click", function () {
