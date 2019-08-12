@@ -114,7 +114,7 @@ audio {
     display: none;
 }
 
-#bandDiv {
+/* #bandDiv {
     grid-area: main;
     justify-self: start;
     height: 100%;
@@ -126,6 +126,21 @@ audio {
     display: none;
     padding: 1rem;
     color: white;
+} */
+
+#bandDiv{
+    float: left;
+    position: fixed;
+    color: white;
+    height: 5rem;
+    font-size: 160%;
+    word-wrap: break-word;
+    display: none;
+}
+
+#bandDiv h2{
+    font-size: 100%;
+    margin: 0;
 }
 
 #lyricsDiv {

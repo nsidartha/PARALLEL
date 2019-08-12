@@ -20,6 +20,7 @@
 
 <body>
     <div class="gridContainer">
+
         <!-- HEADER -->
         <div class="topBar">
             <span id="heading">Parallel</span>
@@ -52,10 +53,6 @@
             </div>
         </div>
 
-        <!-- Bands in Town -->
-        <div id="bandDiv">
-        </div>
-
         <!-- Lyrics Right Div -->
         <div id="lyricsDiv">
             Choose a song for lyrics.
@@ -65,12 +62,16 @@
         <!-- FOOTER -->
         <div class="bottomBar">
 
+            <!-- Bands in Town -->
+            <div id="bandDiv">Choose a song for bandsintown.com info</div>
+
             <!-- VISUALIZER OPTIONS AND AUDIO -->
             <div id="menu">
                 <span class="optionsButton" data-state="off">Options</span>
                 ||
                 <span class="songsButton" data-state="off">Songs</span>
             </div>
+
             <!-- Audio Controls -->
             <audio audio.crossorigin="anonymous" id="audio" src="assets/Songs/defaultMix.mp3" controls></audio>
         </div>
@@ -82,7 +83,7 @@
             <h5>Toggle Tabs:</h5>
             <div id="twitterButton" data-state="off">Toggle Twitter Feed</div>
             <div id="lyricsButton" data-state="off">Toggle Lyrics</div>
-            <div id="bandButton" data-state="off">Toggle BandCamp</div>
+            <div id="bandButton" data-state="off">Toggle BandsInTown</div>
         </div>
 
         <!-- Song List -->

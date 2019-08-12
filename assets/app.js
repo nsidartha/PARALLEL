@@ -40,13 +40,9 @@ $("#twitterButton").on("click", function () {
   if (state == "off") {
     $(this).attr("data-state", "on");
     $("#twitterIdDiv").css("display", "block");
-    $("#bandDiv").css("display", "none");
-    $("#bandButton").attr("data-state", "off");
   } else {
     $(this).attr("data-state", "off");
     $("#twitterIdDiv").css("display", "none");
-    $("#bandDiv").css("display", "none");
-    $("#bandButton").attr("data-state", "off");
   }
   console.log("Twitter Toggle: " + title);
 });
@@ -70,13 +66,9 @@ $("#bandButton").on("click", function () {
   if (state == "off") {
     $("#bandDiv").css("display", "block");
     $("#bandButton").attr("data-state", "on");
-    $("#twitterButton").attr("data-state", "off");
-    $("#twitterIdDiv").css("display", "none");
   } else {
     $("#bandDiv").css("display", "none");
     $("#bandButton").attr("data-state", "off");
-    $("#twitterButton").attr("data-state", "off");
-    $("#twitterIdDiv").css("display", "none");
   }
   console.log("Band Toggle");
 });

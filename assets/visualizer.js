@@ -167,8 +167,7 @@
          id = requestAnimationFrame(renderBarVisualizer);
          analyzer.getByteFrequencyData(freqArray);
 
-         canvasContext.fillStyle = fillStyle;
-         canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+         drawBaseCanvas();
 
          x = canvas.width / 2;
          x2 = x;
@@ -176,17 +175,13 @@
          for (var i = 0; i < analyzer.frequencyBinCount; i++) {
              barHeight = freqArray[i] + 5;
 
-             b = barHeight + (25 * (i / analyzer.frequencyBinCount)) + 50;
-             g = 250 * (i / analyzer.frequencyBinCount);
-
-             canvasContext.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+             setCanvasColor(i,barHeight);
              canvasContext.fillRect(x, (canvas.height - barHeight * 2.5) / 2, barWidth, barHeight * 2.5);
              canvasContext.fillRect(x2, (canvas.height - barHeight * 2.5) / 2, barWidth, barHeight * 2.5);
 
              x += barWidth + 1;
              x2 -= barWidth + 1;
          }
-         //  console.log("Bar Visualizer Animating");
 
      }
 
@@ -202,9 +197,7 @@
          var bars = 200;
          var rads;
 
-         canvasContext.fillStyle = fillStyle;
-         canvasContext.fillRect(0, 0, canvas.width, canvas.height);
-
+         drawBaseCanvas();
 
          for (var i = 0; i < bars; i++) {
              rads = Math.PI * 2 / bars;
@@ -215,17 +208,9 @@
              x2 = center_x + Math.cos(rads * i) * (radius + barHeight);
              y2 = center_y + Math.sin(rads * i) * (radius + barHeight);
 
-             b = barHeight + (25 * (i / analyzer.frequencyBinCount)) + 50;
-             g = 250 * (i / analyzer.frequencyBinCount);
-
-
-             canvasContext.strokeStyle = "rgb(" + r + "," + g + "," + b + ")";
+             setCanvasColor(i,barHeight);
              canvasContext.lineWidth = barWidth;
-             canvasContext.beginPath();
-             canvasContext.moveTo(x, y);
-             canvasContext.lineTo(x2, y2);
-             canvasContext.stroke();
-
+             drawBar(x,y,x2,y2);
          }
 
          bars = bars * 2;
@@ -239,19 +224,11 @@
              x2 = center_x + Math.cos(rads * i) * (radius + barHeight);
              y2 = center_y + Math.sin(rads * i) * (radius + barHeight);
 
-             b = barHeight + (25 * (i / analyzer.frequencyBinCount)) + 50;
-             g = 250 * (i / analyzer.frequencyBinCount);
-
-             canvasContext.strokeStyle = "rgb(" + r + "," + g + "," + b + ")";
+             setCanvasColor(i,barHeight);
              canvasContext.lineWidth = barWidth;
-             canvasContext.beginPath();
-             canvasContext.moveTo(x, y);
-             canvasContext.lineTo(x2, y2);
-             canvasContext.stroke();
+             drawBar(x,y,x2,y2);
 
          }
-
-         console.log("Circle Visualizer Animating");
      }
 
      //Round Visualizer
@@ -265,29 +242,20 @@
          var radius = 1;
          var circles = 50;
 
-         canvasContext.fillStyle = fillStyle;
-         canvasContext.fillRect(0, 0, canvas.width, canvas.height);
-         canvasContext.beginPath();
-         canvasContext.arc(center_x, center_y, radius, 0, 2 * Math.PI);
-         canvasContext.stroke();
+         drawBaseCanvas();
+         drawArc(center_x, center_y, radius, 0, 2 * Math.PI);
 
          for (var i = 0; i < circles; i++) {
              rads = Math.PI * 2 / circles;
              barHeight = freqArray[i];
              radius = freqArray[i];
 
-             b = barHeight + (25 * (i / analyzer.frequencyBinCount) + 50);
-             g = 250 * (i / analyzer.frequencyBinCount);
-
-             canvasContext.strokeStyle = "rgb(" + r + "," + g + "," + b + ")";
+             setCanvasColor(i,barHeight);
              canvasContext.lineWidth = barWidth;
-             canvasContext.beginPath();
-             canvasContext.arc(center_x, center_y, radius + i * 20, i, 2 * Math.PI - i);
-             canvasContext.stroke();
+             drawArc(center_x, center_y, radius + i * 20, i, 2 * Math.PI - i);
 
 
          }
-         console.log("Round Visualizer Animating");
      }
 
      // Clear Canvas for new visualizer
@@ -295,6 +263,35 @@
          canvasContext.clearRect(0, 0, width, height);
          cancelAnimationFrame(id);
          console.log("Canvas Cleared");
+     }
+
+    //  Draw Base Canvas
+     function drawBaseCanvas(){
+        canvasContext.fillStyle = fillStyle;
+        canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+     }
+
+    //  Set Canvas color
+     function setCanvasColor(i,barHeight){
+        b = barHeight + (25 * (i / analyzer.frequencyBinCount)) + 50;
+        g = 250 * (i / analyzer.frequencyBinCount);
+        canvasContext.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+        canvasContext.strokeStyle="rgb(" + r + "," + g + "," + b + ")";
+     }
+
+    //  Draw Arc
+     function drawArc(x,y,radius,start,end){
+        canvasContext.beginPath();
+        canvasContext.arc(x,y,radius,start,end);
+        canvasContext.stroke();
+     }
+
+    //  Draw line/bar
+     function drawBar(x,y,x2,y2){
+        canvasContext.beginPath();
+        canvasContext.moveTo(x, y);
+        canvasContext.lineTo(x2, y2);
+        canvasContext.stroke();
      }
 
  });
