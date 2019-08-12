@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Lobster|Open+Sans+Condensed:300&display=swap"
         rel="stylesheet">
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Style Sheet -->
@@ -52,9 +52,13 @@
             </div>
         </div>
 
+        <!-- Bands in Town -->
+        <div id="bandDiv">
+        </div>
+
         <!-- Lyrics Right Div -->
         <div id="lyricsDiv">
-            Lyrics go here.
+            Choose a song for lyrics.
         </div>
 
 
@@ -67,17 +71,8 @@
                 ||
                 <span class="songsButton" data-state="off">Songs</span>
             </div>
-
+            <!-- Audio Controls -->
             <audio audio.crossorigin="anonymous" id="audio" src="assets/Songs/bensound-summer.mp3" controls></audio>
-            <!-- <div class="button-container">
-                <span class="song" data-name="POP/STARS" data-src="assets/songs/kda.mp3" data-author="By KD/A"
-                    data-twitter="https://twitter.com/MaxHandler1/lists/kill-death-assist?ref_src=twsrc%5Etfw">KDA</span>
-                <span class="song" data-name="Bad Guy" data-src="assets/songs/badguy.mp3" data-author="By Billie Eilish"
-                    data-twitter="https://twitter.com/MaxHandler1/lists/billie-eilish?ref_src=twsrc%5Etfw">Bad
-                    Guy</span>
-                <span class="song" data-name="Press" data-src="assets/songs/cardiPress.mp3" data-author="By Cardi B"
-                    data-twitter="https://twitter.com/MaxHandler1/lists/cardi-b?ref_src=twsrc%5Etfw">Press</span>
-            </div> -->
         </div>
 
         <!-- Options -->
@@ -87,6 +82,7 @@
             <h5>Toggle Tabs:</h5>
             <div id="twitterButton" data-state="off">Toggle Twitter Feed</div>
             <div id="lyricsButton" data-state="off">Toggle Lyrics</div>
+            <div id="bandButton" data-state="off">Toggle BandCamp</div>
         </div>
 
         <!-- Song List -->

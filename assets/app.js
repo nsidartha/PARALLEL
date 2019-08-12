@@ -40,17 +40,19 @@ $("#twitterButton").on("click", function () {
   if (state == "off") {
     $(this).attr("data-state", "on");
     $("#twitterIdDiv").css("display", "block");
+    $("#bandDiv").css("display", "none");
+    $("#bandButton").attr("data-state", "off");
   } else {
     $(this).attr("data-state", "off");
     $("#twitterIdDiv").css("display", "none");
+    $("#bandDiv").css("display", "none");
+    $("#bandButton").attr("data-state", "off");
   }
-
   console.log("Twitter Toggle: " + title);
 });
 
 // Toggle Lyrics
 $("#lyricsButton").on("click", function () {
-  var title;
   var state = $(this).attr("data-state");
   if (state == "off") {
     $("#lyricsDiv").css("display", "block");
@@ -60,27 +62,21 @@ $("#lyricsButton").on("click", function () {
     $(this).attr("data-state", "off");
   }
   console.log("Lyrics Toggle");
-
 });
 
-
-// $(".song").on("click", function () {
-//   // Get Artist
-//   var artist = $(this).attr("data-artist");
-//   // Create Query URL
-//   var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";​
-//   $.ajax
-
-//   QueryURL,
-//   method: "GET"
-// }).then(function (response) {
-//   ​
-//   // Printing the entire object to console
-//   console.log(response);​
-//   var trackerCount = $("<h2>").text(response.tracker_count + " fans tracking this artist");
-//   var Events = $("<h2>").text(response.upcoming_event_count + " upcoming events");
-//   var artistUrl = $("<a>").attr("href", response.url).text("See Tour Dates");​
-//   // Empty the contents of the artist-div, append the new artist content
-//   $("#bit-div").empty();
-//   $("#bit-div").append(trackerCount, Events, artistUrl);
-// });
+// Toggle BandCamp
+$("#bandButton").on("click", function () {
+  var state = $(this).attr("data-state");
+  if (state == "off") {
+    $("#bandDiv").css("display", "block");
+    $("#bandButton").attr("data-state", "on");
+    $("#twitterButton").attr("data-state", "off");
+    $("#twitterIdDiv").css("display", "none");
+  } else {
+    $("#bandDiv").css("display", "none");
+    $("#bandButton").attr("data-state", "off");
+    $("#twitterButton").attr("data-state", "off");
+    $("#twitterIdDiv").css("display", "none");
+  }
+  console.log("Band Toggle");
+});

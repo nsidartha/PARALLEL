@@ -82,7 +82,8 @@ audio {
 #round:hover,
 #twitterButton:hover,
 #lyricsButton:hover,
-.song:hover {
+.song:hover,
+#bandButton:hover {
     color: white;
     cursor: pointer;
     font-size: 105%;
@@ -90,7 +91,7 @@ audio {
 }
 
 .optionsButton:hover,
-.songsButton:hover{
+.songsButton:hover {
     color: white;
     cursor: pointer;
 }
@@ -113,6 +114,20 @@ audio {
     display: none;
 }
 
+#bandDiv {
+    grid-area: main;
+    justify-self: start;
+    height: 100%;
+    width: 20%;
+    z-index: 2;
+    overflow: scroll;
+    display: block;
+    background: #282828;
+    display: none;
+    padding: 1rem;
+    color: white;
+}
+
 #lyricsDiv {
     grid-area: main;
     justify-self: end;
@@ -126,9 +141,9 @@ audio {
     color: white;
 }
 
-#menu{
+#menu {
     text-align: center;
-    color: #3500d3; 
+    color: #3500d3;
     margin-bottom: .2rem;
 }
 
@@ -143,11 +158,11 @@ audio {
     padding: 1rem;
     border-radius: 2rem;
     display: none;
-    color:white;
+    color: white;
     background: #240090;
 }
 
-.songList{
+.songList {
     grid-area: main;
     position: absolute;
     justify-self: center;
@@ -158,12 +173,12 @@ audio {
     padding: 1rem;
     border-radius: 2rem;
     display: none;
-    color:white;
+    color: white;
     background: #240090;
 }
 
-#lyricsDiv{
-    font-size: 140%;
+#lyricsDiv {
+    font-size: 200%;
 }
 
 /* 

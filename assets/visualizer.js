@@ -71,6 +71,8 @@
          audio.play();
          console.log("song clicked: " + title + " " + author);
 
+
+         //  TWITTER FUNCTIONS
          if (title == "Bad Guy") {
              $("#twitterId1").css("display", "none");
              $("#twitterId2").css("display", "block");
@@ -85,12 +87,12 @@
              $("#twitterId3").css("display", "block");
          }
 
-         if(title == "POP/STARS"){
+         if (title == "POP/STARS") {
              title = "POP-STARS";
              author = "K-DA-2";
-         }
-         else{}
-         // Lyrics
+         } else {}
+
+         // LYRICS FUNCTIONS
          var api_key = "746b28bfaf3ac7835a5bb56a481773a5";
          var queryURL =
              "https://api.musixmatch.com/ws/1.1/matcher.lyrics.get?format=jsonp&callback=callback&q_track=" +
@@ -106,13 +108,36 @@
              method: "GET"
          }).then(function (response) {
              // console.log(queryURL);
-        
+
              var data = response.replace("callback(", "").replace(");", "");
              data = JSON.parse(data);
              console.log(data);
              //change the console.log to print into HTML'
              console.log(data.message.body.lyrics.lyrics_body);
              $("#lyricsDiv").text(data.message.body.lyrics.lyrics_body);
+         });
+
+         //  BANDSinTOWN FUNCTIONS
+
+         // Get Artist
+         var artist = author.replace("By ","");
+         // Create Query URL
+         var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";
+         console.log(queryURL);
+
+         $.ajax({
+             url: queryURL,
+             method: "GET"
+         }).then(function (response) {
+            
+             // Printing the entire object to console
+             console.log(response);
+             var trackerCount = $("<h2>").text(response.tracker_count + " fans tracking this artist");
+             var Events = $("<h2>").text(response.upcoming_event_count + " upcoming events");
+             var artistUrl = $("<a>").attr("href", response.url).text("See Tour Dates");
+             // Empty the contents of the artist-div, append the new artist content
+             $("#bandDiv").empty();
+             $("#bandDiv").append(trackerCount, Events, artistUrl);
          });
 
      });
