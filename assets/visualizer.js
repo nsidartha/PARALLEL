@@ -120,6 +120,9 @@
 
          // Get Artist
          var artist = author.replace("By ","");
+         if (title == "POP-STARS") {
+            artist = "Jaira Burns";
+        } else {}
          // Create Query URL
          var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";
          console.log(queryURL);
