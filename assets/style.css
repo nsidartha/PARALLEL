@@ -162,6 +162,10 @@ audio {
     background: #240090;
 }
 
+#lyricsDiv{
+    font-size: 140%;
+}
+
 /* 
 
 @media only screen and (max-width : 992px) {

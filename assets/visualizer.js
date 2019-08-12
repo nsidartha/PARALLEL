@@ -48,7 +48,7 @@
      // Create Bar Default
      clearCanvas();
      renderBarVisualizer();
-     //  audio.play();
+     audio.play();
 
      if (typeof AudioContext != "undefined" || typeof webkitAudioContext != "undefined") {
          var resumeAudio = function () {
@@ -58,6 +58,7 @@
          };
          document.addEventListener("click", resumeAudio);
      }
+
 
      //  Song Changer
      $(".song").on("click", function () {
@@ -71,18 +72,49 @@
          console.log("song clicked: " + title + " " + author);
 
          if (title == "Bad Guy") {
-            $("#twitterId1").css("display", "none");
-            $("#twitterId2").css("display", "block");
-            $("#twitterId3").css("display", "none");
-          } else if (title == "Press") {
-            $("#twitterId1").css("display", "block");
-            $("#twitterId2").css("display", "none");
-            $("#twitterId3").css("display", "none");
-          } else if (title == "POP/STARS") {
-            $("#twitterId1").css("display", "none");
-            $("#twitterId2").css("display", "none");
-            $("#twitterId3").css("display", "block");
-          }
+             $("#twitterId1").css("display", "none");
+             $("#twitterId2").css("display", "block");
+             $("#twitterId3").css("display", "none");
+         } else if (title == "Press") {
+             $("#twitterId1").css("display", "block");
+             $("#twitterId2").css("display", "none");
+             $("#twitterId3").css("display", "none");
+         } else if (title == "POP/STARS") {
+             $("#twitterId1").css("display", "none");
+             $("#twitterId2").css("display", "none");
+             $("#twitterId3").css("display", "block");
+         }
+
+         if(title == "POP/STARS"){
+             title = "POP-STARS";
+             author = "K-DA-2";
+         }
+         else{}
+         // Lyrics
+         var api_key = "746b28bfaf3ac7835a5bb56a481773a5";
+         var queryURL =
+             "https://api.musixmatch.com/ws/1.1/matcher.lyrics.get?format=jsonp&callback=callback&q_track=" +
+             title +
+             "&q_artist=" +
+             author +
+             "&apikey=" +
+             api_key;
+
+
+         $.ajax({
+             url: queryURL,
+             method: "GET"
+         }).then(function (response) {
+             // console.log(queryURL);
+        
+             var data = response.replace("callback(", "").replace(");", "");
+             data = JSON.parse(data);
+             console.log(data);
+             //change the console.log to print into HTML'
+             console.log(data.message.body.lyrics.lyrics_body);
+             $("#lyricsDiv").text(data.message.body.lyrics.lyrics_body);
+         });
+
      });
 
      // Choose Bar Visualizer
@@ -219,7 +251,7 @@
              barHeight = freqArray[i];
              radius = freqArray[i];
 
-             b = barHeight + (25 * (i / analyzer.frequencyBinCount)+50);
+             b = barHeight + (25 * (i / analyzer.frequencyBinCount) + 50);
              g = 250 * (i / analyzer.frequencyBinCount);
 
              canvasContext.strokeStyle = "rgb(" + r + "," + g + "," + b + ")";

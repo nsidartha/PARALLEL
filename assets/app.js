@@ -84,32 +84,3 @@ $("#lyricsButton").on("click", function () {
 //   $("#bit-div").empty();
 //   $("#bit-div").append(trackerCount, Events, artistUrl);
 // });
-
-// // Lyrics
-// var api_key = "746b28bfaf3ac7835a5bb56a481773a5";
-// var trackName;
-// var artistName;
-// var queryURL =
-//   "https://api.musixmatch.com/ws/1.1/matcher.lyrics.get?format=jsonp&callback=callback&q_track=" +
-//   trackName +
-//   "&q_artist=" +
-//   artistName +
-//   "&apikey=" +
-//   api_key;​
-// $(".song").on("click", function () {
-//   trackName = $(this).attr('data-name');
-//   artistName = $(this).attr('data-author').replace("by ", "");
-//   //add to div underhere
-// });​
-// $.ajax({
-//   url: queryURL,
-//   method: "GET"
-// }).then(function (response) {
-//   // console.log(queryURL);
-//   ​
-//   var data = response.replace("callback(", "").replace(");", "");
-//   data = JSON.parse(data);​
-//   console.log(data);
-//   //change the console.log to print into HTML
-//   console.log(data.message.body.lyrics.lyrics_body);
-// });
