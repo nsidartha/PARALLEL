@@ -21,7 +21,8 @@
 <body>
     <div class="gridContainer">
         <!-- HEADER -->
-        <div class="topBar">Parallel
+        <div class="topBar">
+            <span id="heading">Parallel</span>
         </div>
 
         <!-- MAIN DISPLAY -->
@@ -32,46 +33,43 @@
             <h2 class="author"></h2>
         </div>
 
-        <!-- Twitter SideNav is here -->
-        <nav> Live Twitter Feed</nav>
-        <ul id="slide-out" class="sidenav twitterDiv">
-            <li>
-                <!-- <i class="fab fa-twitter-square"></i> -->
-                <!-- <a href="#name"><span class="blue-text name">Twitter Feed </span></a> -->
-                <div id="twitterIdDiv">
-                    <a class="twitter-timeline" id="twitterId"
-                        href="https://twitter.com/MaxHandler1/lists/cardi-b?ref_src=twsrc%5Etfw"></a>
-                </div>
-            </li>
-        </ul>
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <!-- Twitter Left Div -->
+        <div id="twitterIdDiv">
+            <div id="twitterId1">
+                <a class="twitter-timeline" href="https://twitter.com/MaxHandler1/lists/cardi-b?ref_src=twsrc%5Etfw"
+                    data-theme="dark"></a>
+            </div>
 
+            <div id="twitterId2">
+                <a class="twitter-timeline"
+                    href="https://twitter.com/MaxHandler1/lists/billie-eilish?ref_src=twsrc%5Etfw"
+                    data-theme="dark"></a>
+            </div>
 
-        <!-- Lyrics SideNav is here -->
-        <!-- <nav> Song Lyrics</nav>
-        <ul id="slide-out-lyrics" class="sidenav lyricsDiv" fixed>
-            <li>
-
-                <a href="#name"><span class="blue-text name">Song Lyrics</span></a>
-                <div class="divider"></div>
-            </li> -->
-        <!-- <li><a class="waves-effect" href="#!">Third Link With Waves</a></li> -->
-        <!-- </ul>
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
-        <!-- <a href="#" data-activates="slide-out" class="button-collaspe"><i class="mdi-navigation-menu">menu</i></a>
-<i class="fas fa-long-arrow-alt-right"></i> -->
-
-        <div id="bit-div">
-
+            <div id="twitterId3">
+                <a class="twitter-timeline" id="twitterId3" href="https://twitter.com/MaxHandler1/lists/kd-a1"
+                    data-theme="dark"></a>
+            </div>
         </div>
+
+        <!-- Lyrics Right Div -->
+        <div id="lyricsDiv">
+            Lyrics go here.
+        </div>
+
 
         <!-- FOOTER -->
         <div class="bottomBar">
 
             <!-- VISUALIZER OPTIONS AND AUDIO -->
-            <span class="button-container" id="buttonContainer"></span>
+            <div id="menu">
+                <span class="optionsButton" data-state="off">Options</span>
+                ||
+                <span class="songsButton" data-state="off">Songs</span>
+            </div>
+
             <audio audio.crossorigin="anonymous" id="audio" src="assets/Songs/bensound-summer.mp3" controls></audio>
-            <div class="button-container">
+            <!-- <div class="button-container">
                 <span class="song" data-name="POP/STARS" data-src="assets/songs/kda.mp3" data-author="By KD/A"
                     data-twitter="https://twitter.com/MaxHandler1/lists/kill-death-assist?ref_src=twsrc%5Etfw">KDA</span>
                 <span class="song" data-name="Bad Guy" data-src="assets/songs/badguy.mp3" data-author="By Billie Eilish"
@@ -79,13 +77,33 @@
                     Guy</span>
                 <span class="song" data-name="Press" data-src="assets/songs/cardiPress.mp3" data-author="By Cardi B"
                     data-twitter="https://twitter.com/MaxHandler1/lists/cardi-b?ref_src=twsrc%5Etfw">Press</span>
-            </div>
+            </div> -->
         </div>
+
+        <!-- Options -->
+        <div class="options">
+            <h5>Visualizer Style:</h5>
+            <span class="button-container" id="buttonContainer"></span>
+            <h5>Toggle Tabs:</h5>
+            <div id="twitterButton" data-state="off">Toggle Twitter Feed</div>
+            <div id="lyricsButton" data-state="off">Toggle Lyrics</div>
+        </div>
+
+        <!-- Song List -->
+        <div class="songList">
+            <h5>Song List:</h5>
+            <div class="song" data-name="POP/STARS" data-src="assets/songs/kda.mp3" data-author="By KD/A"
+                data-twitter="https://twitter.com/MaxHandler1/lists/kill-death-assist?ref_src=twsrc%5Etfw">POP/STARS by
+                K/DA</div>
+            <div class="song" data-name="Bad Guy" data-src="assets/songs/badguy.mp3" data-author="By Billie Eilish"
+                data-twitter="https://twitter.com/MaxHandler1/lists/billie-eilish?ref_src=twsrc%5Etfw">Bad
+                Guy by Billie Eilish</div>
+            <div class="song" data-name="Press" data-src="assets/songs/cardiPress.mp3" data-author="By Cardi B"
+                data-twitter="https://twitter.com/MaxHandler1/lists/cardi-b?ref_src=twsrc%5Etfw">Press by Cardi B</div>
+        </div>
+
+
     </div>
-
-
-
-
 
     <!-- jQuery -->
     <!-- <script src="https://sdk.scdn.co/spotify-player.js"></script> -->
