@@ -92,6 +92,32 @@ $("#titleButton").on("click", function () {
   console.log("Title Toggle");
 });
 
+// Toggle Music Display
+$("#musicButton").on("click", function () {
+  var state = $(this).attr("data-state");
+  if (state == "off") {
+    $(".music").css("display", "block");
+    $(this).attr("data-state", "on");
+  } else {
+    $(".music").css("display", "none");
+    $(this).attr("data-state", "off");
+  }
+  console.log("Music Toggle");
+});
+
+// Toggle Audio
+$("#controlsButton").on("click", function () {
+  var state = $(this).attr("data-state");
+  if (state == "off") {
+    $("#audio").css("display", "table");
+    $(this).attr("data-state", "on");
+  } else {
+    $("#audio").css("display", "none");
+    $(this).attr("data-state", "off");
+  }
+  console.log("Audio Controls Toggle");
+});
+
 // Title Form
 $('.titleInput').keypress(function (event) {
   if (event.keyCode == 13 || event.which == 13) {
