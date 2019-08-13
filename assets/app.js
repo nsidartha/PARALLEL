@@ -1,3 +1,6 @@
+var repeat1;
+var repeat2;
+
 // Toggle Options
 $(".optionsButton").on("click", function () {
   var state = $(this).attr("data-state");
@@ -37,15 +40,14 @@ $(".songsButton").on("click", function () {
 $("#twitterButton").on("click", function () {
   var title = $(".title").text();
   var state = $(this).attr("data-state");
-  var repeat;
   if (state == "off") {
     $(this).attr("data-state", "on");
     $("#twitterIdDiv").css("display", "block");
-    repeat = setInterval(ScrollDiv, 50, "twitterIdDiv", true);
+    clearInterval(repeat1);
+    repeat1 = setInterval(ScrollDiv, 50, "twitterIdDiv", true);
   } else {
     $(this).attr("data-state", "off");
     $("#twitterIdDiv").css("display", "none");
-    clearInterval(repeat);
   }
   console.log("Twitter Toggle: " + title);
 });
@@ -53,16 +55,14 @@ $("#twitterButton").on("click", function () {
 // Toggle Lyrics
 $("#lyricsButton").on("click", function () {
   var state = $(this).attr("data-state");
-  var repeat;
   if (state == "off") {
     $("#lyricsDiv").css("display", "block");
     $(this).attr("data-state", "on");
-    document.getElementById("lyricsDiv").scrollTop = 0;
-    repeat = setInterval(ScrollDiv, 100, "lyricsDiv", false);
+    clearInterval(repeat2);
+    repeat2 = setInterval(ScrollDiv, 100, "lyricsDiv", false);
   } else {
     $("#lyricsDiv").css("display", "none");
     $(this).attr("data-state", "off");
-    clearInterval(repeat);
   }
   console.log("Lyrics Toggle");
 });
