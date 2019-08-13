@@ -138,6 +138,7 @@ audio {
     padding: 1rem;
     color: white;
     font-size: 200%;
+    text-shadow: none;
 }
 
 #menu {

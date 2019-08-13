@@ -37,12 +37,15 @@ $(".songsButton").on("click", function () {
 $("#twitterButton").on("click", function () {
   var title = $(".title").text();
   var state = $(this).attr("data-state");
+  var repeat;
   if (state == "off") {
     $(this).attr("data-state", "on");
     $("#twitterIdDiv").css("display", "block");
+    repeat = setInterval(ScrollDiv, 50, "twitterIdDiv", true);
   } else {
     $(this).attr("data-state", "off");
     $("#twitterIdDiv").css("display", "none");
+    clearInterval(repeat);
   }
   console.log("Twitter Toggle: " + title);
 });
@@ -50,12 +53,15 @@ $("#twitterButton").on("click", function () {
 // Toggle Lyrics
 $("#lyricsButton").on("click", function () {
   var state = $(this).attr("data-state");
+  var repeat;
   if (state == "off") {
     $("#lyricsDiv").css("display", "block");
     $(this).attr("data-state", "on");
+    repeat = setInterval(ScrollDiv, 50, "lyricsDiv", false);
   } else {
     $("#lyricsDiv").css("display", "none");
     $(this).attr("data-state", "off");
+    clearInterval(repeat);
   }
   console.log("Lyrics Toggle");
 });
@@ -84,13 +90,11 @@ $('.titleInput').keypress(function (event) {
 });
 
 // Auto-Scroll
-function ScrollDiv(div) {
+function ScrollDiv(div, repeat) {
   var x = document.getElementById(div);
   if (x.scrollTop < (x.scrollHeight - x.offsetHeight)) {
     x.scrollTop = x.scrollTop + 1;
-  } else {
+  } else if (repeat == true) {
     x.scrollTop = 0;
   }
 }
-setInterval(ScrollDiv,50,"twitterIdDiv");
-setInterval(ScrollDiv,50,"lyricsDiv");
