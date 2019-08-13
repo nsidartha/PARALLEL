@@ -76,6 +76,8 @@
          audio.play();
          console.log("song clicked: " + title + " " + author);
 
+         document.getElementById("lyricsDiv").scrollTop = 0;
+
 
          //  TWITTER FUNCTIONS
          if (title == "Bad Guy") {
