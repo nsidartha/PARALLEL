@@ -57,7 +57,8 @@ $("#lyricsButton").on("click", function () {
   if (state == "off") {
     $("#lyricsDiv").css("display", "block");
     $(this).attr("data-state", "on");
-    repeat = setInterval(ScrollDiv, 80, "lyricsDiv", false);
+    document.getElementById("lyricsDiv").scrollTop = 0;
+    repeat = setInterval(ScrollDiv, 100, "lyricsDiv", false);
   } else {
     $("#lyricsDiv").css("display", "none");
     $(this).attr("data-state", "off");
