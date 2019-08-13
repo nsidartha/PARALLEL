@@ -86,7 +86,8 @@ audio {
 .song:hover,
 #bandButton:hover,
 #titleButton:hover,
-#musicButton:hover {
+#musicButton:hover,
+#controlsButton:hover {
     color: white;
     cursor: pointer;
     font-size: 105%;
