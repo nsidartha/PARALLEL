@@ -108,7 +108,7 @@ audio {
     height: 100%;
     width: 20%;
     z-index: 2;
-    overflow: scroll;
+    overflow-y: hidden;
     display: block;
     background: #282828;
     display: none;
@@ -143,13 +143,14 @@ audio {
     margin: 0;
 }
 
+
 #lyricsDiv {
     grid-area: main;
     justify-self: end;
     height: 100%;
     width: 20%;
     z-index: 2;
-    overflow: scroll;
+    overflow-y: hidden;
     display: none;
     background: #282828;
     padding: 1rem;
@@ -220,12 +221,10 @@ input{
     font-weight: bold; 
 }
 
-/* #submit{
-    float: right;
-} */
-
-/* 
-
+::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+/*
 @media only screen and (max-width : 992px) {
 
     header,

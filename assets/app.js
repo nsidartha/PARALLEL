@@ -74,11 +74,32 @@ $("#bandButton").on("click", function () {
 });
 
 // Title Form
-$('.titleInput').keypress(function(event) {
-    if (event.keyCode == 13 || event.which == 13) {
-        var input = $("#event").val();
-        $(".eventTitle").text(input);
-        $("#event").val('');
-        event.preventDefault();
-    }
+$('.titleInput').keypress(function (event) {
+  if (event.keyCode == 13 || event.which == 13) {
+    var input = $("#event").val();
+    $(".eventTitle").text(input);
+    $("#event").val('');
+    event.preventDefault();
+  }
 });
+
+// Auto-Scroll
+function ScrollDiv(div) {
+
+  if (document.getElementById('twitterIdDiv').scrollTop < (document.getElementById('twitterIdDiv').scrollHeight - document.getElementById('twitterIdDiv').offsetHeight)) {
+    -1
+    document.getElementById('twitterIdDiv').scrollTop = document.getElementById('twitterIdDiv').scrollTop + 1
+  } else {
+    document.getElementById('twitterIdDiv').scrollTop = 0;
+  }
+
+  if (document.getElementById('lyricsDiv').scrollTop < (document.getElementById('lyricsDiv').scrollHeight - document.getElementById('lyricsDiv').offsetHeight)) {
+    -1
+    document.getElementById('lyricsDiv').scrollTop = document.getElementById('lyricsDiv').scrollTop + 1
+  } else {
+    document.getElementById('lyricsDiv').scrollTop = 0;
+  }
+}
+
+
+setInterval(ScrollDiv, 50)

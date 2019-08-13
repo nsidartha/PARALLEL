@@ -20,6 +20,7 @@
      console.log("Width: " + canvas.width + " Height: " + canvas.height);
      //  fillStyle = document.getElementById("visualizerContainer").style.background;
      fillStyle = "black";
+     
      // Audio Variables
      var audio = document.getElementById("audio");
      audio.crossOrigin = "anonymous";
