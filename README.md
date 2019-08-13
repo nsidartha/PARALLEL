@@ -1,4 +1,6 @@
 3 Style Visualizer
+by militara106
+
 INSTALLATION INSTRUCTIONS
 ----------------------------
 In your html create
