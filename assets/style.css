@@ -82,7 +82,8 @@ audio {
 #twitterButton:hover,
 #lyricsButton:hover,
 .song:hover,
-#bandButton:hover {
+#bandButton:hover,
+#titleButton:hover {
     color: white;
     cursor: pointer;
     font-size: 105%;
@@ -175,7 +176,7 @@ audio {
     display: flex;
     justify-content: space-between;
     letter-spacing: 0.05em;
-    align-items: center;
+    align-items: flex-start;
 }
 
 #options1{
@@ -186,9 +187,6 @@ audio {
 #option2{
     order: 1;
 }
-
-
-
 
 .songList {
     grid-area: main;
@@ -204,6 +202,10 @@ audio {
     display: none;
     color: white;
     background: #240090;
+}
+
+.titleInput{
+    display: none;
 }
 
 .input-field{

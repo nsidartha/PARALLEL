@@ -57,7 +57,7 @@ $("#lyricsButton").on("click", function () {
   if (state == "off") {
     $("#lyricsDiv").css("display", "block");
     $(this).attr("data-state", "on");
-    repeat = setInterval(ScrollDiv, 50, "lyricsDiv", false);
+    repeat = setInterval(ScrollDiv, 80, "lyricsDiv", false);
   } else {
     $("#lyricsDiv").css("display", "none");
     $(this).attr("data-state", "off");
@@ -71,12 +71,25 @@ $("#bandButton").on("click", function () {
   var state = $(this).attr("data-state");
   if (state == "off") {
     $("#bandDiv").css("display", "block");
-    $("#bandButton").attr("data-state", "on");
+    $(this).attr("data-state", "on");
   } else {
     $("#bandDiv").css("display", "none");
-    $("#bandButton").attr("data-state", "off");
+    $(this).attr("data-state", "off");
   }
   console.log("Band Toggle");
+});
+
+// Toggle Title
+$("#titleButton").on("click", function () {
+  var state = $(this).attr("data-state");
+  if (state == "off") {
+    $(".titleInput").css("display", "block");
+    $(this).attr("data-state", "on");
+  } else {
+    $(".titleInput").css("display", "none");
+    $(this).attr("data-state", "off");
+  }
+  console.log("Title Toggle");
 });
 
 // Title Form
