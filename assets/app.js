@@ -85,11 +85,8 @@ $('.titleInput').keypress(function (event) {
 
 // Auto-Scroll
 function ScrollDiv(div) {
-
   var x = document.getElementById(div);
-
   if (x.scrollTop < (x.scrollHeight - x.offsetHeight)) {
-    -1
     x.scrollTop = x.scrollTop + 1;
   } else {
     x.scrollTop = 0;
