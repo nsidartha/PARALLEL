@@ -86,20 +86,14 @@ $('.titleInput').keypress(function (event) {
 // Auto-Scroll
 function ScrollDiv(div) {
 
-  if (document.getElementById('twitterIdDiv').scrollTop < (document.getElementById('twitterIdDiv').scrollHeight - document.getElementById('twitterIdDiv').offsetHeight)) {
-    -1
-    document.getElementById('twitterIdDiv').scrollTop = document.getElementById('twitterIdDiv').scrollTop + 1
-  } else {
-    document.getElementById('twitterIdDiv').scrollTop = 0;
-  }
+  var x = document.getElementById(div);
 
-  if (document.getElementById('lyricsDiv').scrollTop < (document.getElementById('lyricsDiv').scrollHeight - document.getElementById('lyricsDiv').offsetHeight)) {
+  if (x.scrollTop < (x.scrollHeight - x.offsetHeight)) {
     -1
-    document.getElementById('lyricsDiv').scrollTop = document.getElementById('lyricsDiv').scrollTop + 1
+    x.scrollTop = x.scrollTop + 1;
   } else {
-    document.getElementById('lyricsDiv').scrollTop = 0;
+    x.scrollTop = 0;
   }
 }
-
-
-setInterval(ScrollDiv, 50)
+setInterval(ScrollDiv,50,"twitterIdDiv");
+setInterval(ScrollDiv,50,"lyricsDiv");
