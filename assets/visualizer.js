@@ -18,7 +18,8 @@
      var height = canvas.height;
      var width = canvas.width;
      console.log("Width: " + canvas.width + " Height: " + canvas.height);
-     //  fillStyle = document.getElementById("visualizerContainer").style.background;
+
+    //  Canvas Background Color
      fillStyle = "black";
      
      // Audio Variables
@@ -78,14 +79,20 @@
              $("#twitterId1").css("display", "none");
              $("#twitterId2").css("display", "block");
              $("#twitterId3").css("display", "none");
+             $("#twitterError").css("display","none");
          } else if (title == "Press") {
              $("#twitterId1").css("display", "block");
              $("#twitterId2").css("display", "none");
              $("#twitterId3").css("display", "none");
+             $("#twitterError").css("display","none");
          } else if (title == "POP/STARS") {
              $("#twitterId1").css("display", "none");
              $("#twitterId2").css("display", "none");
              $("#twitterId3").css("display", "block");
+             $("#twitterError").css("display","none");
+         }
+         else{
+            $("#twitterError").css("display","block");
          }
 
          if (title == "POP/STARS") {

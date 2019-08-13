@@ -10,14 +10,10 @@ footer {
 }
 
 body {
-    /* overflow: hidden;
-    height: 100vh; */
     background: #0c0032;
     color: #282828;
     text-shadow: 2px 2px 8px black;
-    /* font-family: 'Lobster', cursive; */
     font-family: 'Open Sans Condensed', sans-serif;
-    /* font-family: 'Amatic SC', cursive; */
     height: 100%;
 }
 
@@ -26,12 +22,9 @@ body {
     grid-template-areas: "header header header"
         "main main main"
         "footer footer footer";
-    /* grid-template-columns: 150px 1fr 150px;
-    grid-template-rows: auto .98fr auto; */
     grid-template-rows: auto 80vh auto;
     min-height: 99vh;
     max-height: 99vh;
-    /* margin: -.5rem; */
     position: relative;
 }
 
@@ -111,22 +104,11 @@ audio {
     overflow-y: hidden;
     display: block;
     background: #282828;
-    display: none;
-}
-
-/* #bandDiv {
-    grid-area: main;
-    justify-self: start;
-    height: 100%;
-    width: 20%;
-    z-index: 2;
-    overflow: scroll;
-    display: block;
-    background: #282828;
-    display: none;
     padding: 1rem;
-    color: white;
-} */
+    display: none;
+    color:white;
+    font-size: 200%;
+}
 
 #bandDiv{
     float: left;
@@ -155,6 +137,7 @@ audio {
     background: #282828;
     padding: 1rem;
     color: white;
+    font-size: 200%;
 }
 
 #menu {
@@ -193,10 +176,6 @@ audio {
     background: #240090;
 }
 
-#lyricsDiv {
-    font-size: 200%;
-}
-
 .input-field{
     float: right;
     position: fixed;
@@ -220,16 +199,3 @@ input{
     font-size: 500%;
     font-weight: bold; 
 }
-
-::-webkit-scrollbar-thumb {
-    background: #888; 
-  }
-/*
-@media only screen and (max-width : 992px) {
-
-    header,
-    main,
-    footer {
-        padding-left: 0;
-    }
-} */

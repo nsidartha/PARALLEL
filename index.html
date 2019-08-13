@@ -6,14 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PARALLEL</title>
+
     <!-- Font -->
     <script src="https://kit.fontawesome.com/0dc9da7c51.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Lobster|Open+Sans+Condensed:300&display=swap"
         rel="stylesheet">
+
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
     <!-- Style Sheet -->
     <link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
@@ -29,7 +33,6 @@
                     <i class="material-icons prefix">account_circle</i>
                     <input id="event" type="text" class="validate">
                     <label for="event">Event Title</label>
-                    <!-- <span id="submit">Submit</span> -->
                 </div>
             </form>
 
@@ -49,6 +52,7 @@
 
         <!-- Twitter Left Div -->
         <div id="twitterIdDiv">
+            <span id="twitterError">Twitter unavailable for this band.</span>
             <div id="twitterId1">
                 <a class="twitter-timeline" href="https://twitter.com/MaxHandler1/lists/cardi-b?ref_src=twsrc%5Etfw"
                     data-theme="dark"></a>
@@ -68,7 +72,7 @@
 
         <!-- Lyrics Right Div -->
         <div id="lyricsDiv">
-            Lyrics unavailble for this Song
+            Lyrics unavailable for this Song
         </div>
 
 
@@ -115,9 +119,12 @@
 
     </div>
 
-    <!-- jQuery -->
+    <!-- Future Spotify Api -->
     <!-- <script src="https://sdk.scdn.co/spotify-player.js"></script> -->
+
+    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <!-- JavaScript/Materialize-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
