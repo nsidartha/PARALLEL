@@ -1,5 +1,5 @@
 3 Style Visualizer
-by miltiara106
+by militara106
 
 INSTALLATION INSTRUCTIONS
 ----------------------------
