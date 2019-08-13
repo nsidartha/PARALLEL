@@ -17,6 +17,12 @@ body {
     height: 100%;
 }
 
+hr{
+    display: block; 
+    border: 0; 
+    border-top: 1px solid #3500d3;
+}
+
 .gridContainer {
     display: grid;
     grid-template-areas: "header header header"
@@ -108,6 +114,7 @@ audio {
     display: none;
     color:white;
     font-size: 200%;
+    text-shadow: none;
 }
 
 #bandDiv{
@@ -156,11 +163,32 @@ audio {
     width: auto;
     z-index: 2;
     padding: 1rem;
+    padding-top: 0;
     border-radius: 2rem;
     display: none;
     color: white;
     background: #240090;
+    text-align: center;
 }
+
+.optContainer{
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 0.05em;
+    align-items: center;
+}
+
+#options1{
+    order: 2;
+    padding-left: 1rem;
+}
+
+#option2{
+    order: 1;
+}
+
+
+
 
 .songList {
     grid-area: main;
@@ -171,6 +199,7 @@ audio {
     width: auto;
     z-index: 2;
     padding: 1rem;
+    padding-top:0; 
     border-radius: 2rem;
     display: none;
     color: white;

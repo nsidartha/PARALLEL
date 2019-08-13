@@ -2,9 +2,9 @@
 
      // Button Variables
      var buttonContainer = $("<div>");
-     var bar = $("<div>").attr("id", "bar").text(" BAR ");
-     var circle = $("<div>").attr("id", "circle").text(" CIRCLE ");
-     var round = $("<div>").attr("id", "round").text(" SPEAKER ");
+     var bar = $("<div>").attr("id", "bar").text(" Vectis ");
+     var circle = $("<div>").attr("id", "circle").text(" Orbita ");
+     var round = $("<div>").attr("id", "round").text(" Vox ");
      buttonContainer.append(bar, circle, round);
      $("#buttonContainer").append(buttonContainer);
 
