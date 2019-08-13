@@ -76,6 +76,12 @@ hr{
 audio {
     margin: 0 auto;
     display: table;
+    opacity: .2;
+    transition: opacity .25s ease-in-out;
+}
+
+audio:hover{
+    opacity: 1;
 }
 
 #bar:hover,
